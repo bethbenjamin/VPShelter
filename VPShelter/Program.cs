@@ -10,6 +10,9 @@ namespace VPShelter
     {
         static void Main(string[] args)
         {
+
+            /*have a method that asks for user input 
+             * writes output to the console */
         }
-    }
-}
+    } //end of main
+} //end of namespace
