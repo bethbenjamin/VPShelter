@@ -49,7 +49,7 @@
     <Compile Include="VirtualPet.cs" />
     <Compile Include="VirtualPetShelter.cs" />
     <Compile Include="Volunteer.cs" />
-    <Compile Include="VPTypeDiet.cs" />
+    <Compile Include="Thunderbird.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

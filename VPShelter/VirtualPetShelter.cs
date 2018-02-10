@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    class VirtualPetShelter//think of this like the client class (not connected to anything)
+  public class VirtualPetShelter//think of this like the client class (not connected to anything)
     {
 
         //fields

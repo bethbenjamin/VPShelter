@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    class Volunteer:Employee
+    public class Volunteer:Employee
     {
         //fields
+        private string volunteerType;
+        
+
         //properties (must add an additional property)
         
         //constructors
