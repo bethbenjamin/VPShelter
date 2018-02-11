@@ -51,7 +51,7 @@
             this.dietOfPet = dietOfPet;
         }
 
-        //mehtods
+        //methods
         public override void Play() // if she plays she will get hungry, get thirsty and lose energy.
         {
             thunderHappy += 0;
@@ -74,7 +74,7 @@
             }
             else if (thunderHungry > 90) //almost at the end
             {
-                return "Quick, someone get her an Erumpant!");
+                return "Quick, someone get her an Erumpant!";
             }
             else
             {

@@ -6,35 +6,31 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-  public class Employee//this is a base class
+  public abstract class Employee//this is an abstract base class
     {
 
         //fields
         private double employeeID;
         private double showID;// abstract
-        private double clockIn;// abstract
+        private double salary;// abstract
         //properties 
         //at least one property (EmployeeID)
         public double EmployeeID
         {
             get { return this.employeeID; }
-            set { this.employeeID = value; }
+           
         }
-        public double ShowID
-        {
-            get { return this.showID; }
-            set { this.showID = value; }
-        }
-        public double ClockIn
-        {
-            get { return this.clockIn; }
-            set { this.clockIn = value; }
-        }
+       
         
+
 
         //constructors
 
         //methods
-        //two abstract methods
+        //two abstract methods  // must call from class as abstract
+        public abstract double Salary();
+        public abstract double ShowID();
+
+
     } //end class Employee
 }//end namespace

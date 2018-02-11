@@ -28,13 +28,13 @@ namespace VPShelter
 
             Manager managerOne = new Manager("Rubeus Hagrid");
 
-            Volunteer vol = new Volunteer();
-            Volunteer volOne = new Volunteer("Newton Scamander");
-            Volunteer volTwo = new Volunteer("Jacob Kowalski");
+            Volunteer volunteer = new Volunteer();
+            Volunteer volunteerOne = new Volunteer("Newton Scamander");
+            Volunteer volunteerTwo = new Volunteer("Jacob Kowalski");
             //required employeeID 
             managerOne.EmployeeID = 8675309;
-            volOne.EmployeeID = 62442;
-            volTwo.EmployeeID = 394;
+            volunteerOne.EmployeeID = 62442;
+            volunteerTwo.EmployeeID = 394;
 
             int choice = 0;
             // do while loop
@@ -75,9 +75,10 @@ namespace VPShelter
                                 Console.WriteLine("(Name)   (ID)  (Hours worked)");
                                 Console.WriteLine("");
                                 break;
-                            case 2://manager clockin
-                                Console.WriteLine(managerOne.ClockIn());
-                                Console.WriteLine("Manager has clocked in");
+                            case 2://manager salary
+                                Console.WriteLine("Manager's salary");
+                                Console.WriteLine(managerOne.Salary());
+                                
                                 Console.WriteLine();
                                 break;
                             case 3://view inventory
