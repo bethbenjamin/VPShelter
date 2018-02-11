@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VPShelter
+﻿namespace VPShelter
 {
-   public class Thunderbird: VirtualPet
+    public class Thunderbird : VirtualPet
     {
 
         //fields
@@ -17,7 +11,7 @@ namespace VPShelter
         public int thunderHappy = 100;
         public int thunderEnergyLevel = 100;
         public int thunderWater = 100;
-        public int messyCage = 0;
+        
 
         //fields and properties should include type of pet and diet
 
@@ -34,13 +28,15 @@ namespace VPShelter
             set { this.dietOfPet = value; }
         }
 
-        public Thunderbird(int thunderHungry, int thunderHappy, int thunderAge, int thunderEnergyLevel, int thunderWater)
+        public Thunderbird(int thunderHungry, int thunderHappy, int thunderAge, int thunderEnergyLevel, int thunderWater, string dietOfPet, string typeOfPet)
         {
             this.thunderHungry = thunderHungry;
             this.thunderHappy = thunderHappy;
             this.thunderAge = thunderAge;
             this.thunderEnergyLevel = thunderEnergyLevel;
             this.thunderWater = thunderWater;
+            this.typeOfPet = typeOfPet;
+            this.dietOfPet = dietOfPet;
 
         }
 
@@ -69,20 +65,20 @@ namespace VPShelter
         {
             if (thunderHungry > 10) //basically saying if thunderHungry is less than 1 do this:
             {
-                Console.WriteLine("Yum. She's full. She can't eat anymore.");
-
+                return "Yum. She's full. She can't eat anymore.";
+                
             }
             else if (thunderHungry > 50) //less than or equal to 60
             {
-                Console.WriteLine("Your Thunderbird seems to be quite hungry.  One or two Pygmy Puffs will do.");
+                return "Your Thunderbird seems to be quite hungry.  One or two Pygmy Puffs will do.";
             }
             else if (thunderHungry > 90) //almost at the end
             {
-                Console.WriteLine("Quick, someone get her an Erumpant!");
+                return "Quick, someone get her an Erumpant!");
             }
             else
             {
-                Console.WriteLine("Thunderbirds are interesting creatures, keep her happy, there will be no problems. ");
+                return "Thunderbirds are interesting creatures, keep her happy, there will be no problems. ";
             }
             thunderHungry += 6; //if she eats she will get thirsty, increase energy and make her happy
             thunderWater -= 5;
@@ -95,26 +91,26 @@ namespace VPShelter
         {
             if (thunderWater < 20) //basically saying if thunderWater is less than 9 do this:
             {
-                Console.WriteLine("Best to not give her anymore water.");
+                return"Best to not give her anymore water.";
             }
             else if (thunderWater > 50) //half way 
             {
-                Console.WriteLine("Your Thunderbird seems thirsty. Fill the water dish!");
+               return "Your Thunderbird seems thirsty. Fill the water dish!";
             }
             else if (thunderWater > 90)
             {
-                Console.WriteLine("Give Thunderbird her water!");
+               return"Give Thunderbird her water!";
             }
             else
             {
-                Console.WriteLine("Thunderbirds thrive on water. It's now or never. ");
+                return "Thunderbirds thrive on water. It's now or never. ";
             }
             thunderWater += 3;//if thunder drinks water she will 
             thunderHungry -= 1;
             thunderEnergyLevel += 2;
             thunderHappy -= 3;
         } //this is the end of the Water method
-        public override void thunderEat()
+        public void ThunderEat()
         {
             thunderHungry += 2; //this - an incrememnt of 2 (which is less than 5 set)
             thunderWater -= 1; //adds water when eats

@@ -1,149 +1,163 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VPShelter
+﻿namespace VPShelter
 {
-   public class VirtualPet
+    public class VirtualPet
     {
-        public class Dragon
+
+        // add these 4 items at the beginning of all classes (1. fields, 2. Properties 3. Constructors 4. Methods)
+        //STATES
+        //fields (at least three)
+        //fields (camelCase)
+
+        public int dracoAge = 100; //age of dragon
+        public int dracoHungry = 100; //dragon hunger out of 100
+        public int dracoHappy = 100; //dragon happiness out of 100
+        public int energyLevel = 100; //potential for energy gain or loss with hunger
+        public int dracoWater = 100; //dragon water level out of 100 / same idea as Hungry
+        
+        public string name = "";
+        public string description = "";
+        public int messyCage = 0;
+
+        //Properties (at least three)
+        //GET property accessor is used to return the property value.
+        //SET property accessor is used to assign a new value. 
+
+        public int DracoHungry
         {
-            // add these 4 items at the beginning of all classes (1. fields, 2. Properties 3. Constructors 4. Methods)
-            //STATES
-            //fields (at least three)
-            //fields (camelCase)
+            get { return this.dracoHungry; }
+            set { this.dracoHungry = value; }
+        }
+        public int DracoAge
+        {
+            get { return this.dracoAge; }
+            set { this.dracoAge = value; }
+        }
+        public int DracoHappy
+        {
+            get { return this.dracoHappy; }
+            set { this.dracoHappy = value; }
+        }
 
-            public int dracoAge = 100; //age of dragon
-            public int dracoHungry = 100; //dragon hunger out of 100
-            public int dracoHappy = 100; //dragon happiness out of 100
-            public int energyLevel = 100; //potential for energy gain or loss with hunger
-            public int dracoWater = 100; //dragon water level out of 100 / same idea as Hungry
-            public int messyCage = 0;
-            public string name = "";
-            
+        public int EnergyLevel
+        {
+            get { return this.energyLevel; }
+            set { this.energyLevel = value; }
+        }
 
-            //Properties (at least three)
-            //GET property accessor is used to return the property value.
-            //SET property accessor is used to assign a new value. 
+        public int DracoWater
+        {
+            get { return this.dracoWater; }
+            set { this.dracoWater = value; }
+        }
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+        public int MessyCage
+        {
+            get { return this.messyCage; }
+            set { this.messyCage = value; }
+        }
 
-            public int DracoHungry
+        //BEHAVIORS
+        //Constructors
+        public VirtualPet()
+        {
+            //default constructor - never put anything in this constructor
+            //takes no parameters (nothing in the parentheses)
+        }
+
+
+        public VirtualPet(int dracoHungry, int dracoHappy, int dracoAge, int energyLevel, int dracoWater, string name, string description, int messyCage)
+        {
+            this.dracoHungry = dracoHungry;
+            this.dracoHappy = dracoHappy;
+            this.dracoAge = dracoAge;
+            this.energyLevel = energyLevel;
+            this.dracoWater = dracoWater;
+            this.name = name;
+            this.description = description;
+            this.messyCage = messyCage;
+
+        }
+
+
+        //methods(at least three)
+        public virtual void Play() // if she plays she will get hungry, get thirsty and lose energy.
+        {
+            dracoHappy += 0;
+            dracoHungry -= 6;
+            energyLevel -= 10;
+            dracoWater -= 5;
+
+        }//this is the end of DracoPlay method
+
+        public virtual void Feed() //if she feeds she will get thirsty and gain energy
+        {
+            if (dracoHungry > 10) //basically saying if dracoHungry is less than 1 do this:
             {
-                get { return this.dracoHungry; }
-                set { this.dracoHungry = value; }
+                return  "Did you just feed her a whale?  She's full. She can't eat anymore.";
+                
             }
-            public int DracoAge
+            else if (dracoHungry > 50) //less than or equal to 60
             {
-                get { return this.dracoAge; }
-                set { this.dracoAge = value; }
+                return "Draco seems to be quite hungry.  One or two Fwoopers will do.";
             }
-            public int DracoHappy
+            else if (dracoHungry > 90) //almost at the end
             {
-                get { return this.dracoHappy; }
-                set { this.dracoHappy = value; }
+                return "She is weak, she must be fed. Quick, someone get her an elephant!";
             }
-
-            public int EnergyLevel
+            else
             {
-                get { return this.energyLevel; }
-                set { this.energyLevel = value; }
+                return "Hungarian Horntails are even more vicious when hungry? It's now or never. ";
             }
+            dracoHungry += 6; //if she eats she will get thirsty, increase energy and make her happy
+            dracoWater -= 5;
+            energyLevel += 5;
+            dracoHappy += 3;
+        } //this is the end of the feed method
 
-            public int DracoWater
+        public virtual Water() //this needs to  be in string 
+
+        {
+            dracoWater += 3;//if draco drinks water she will 
+            dracoHungry -= 1;
+            energyLevel += 2;
+            dracoHappy -= 3;
+
+            if (dracoWater < 20) //basically saying if dracoWater is less than 9 do this:
             {
-                get { return this.dracoWater; }
-                set { this.dracoWater = value; }
+                return "She's had her fill of water at the moment. Best to not give her anymore water.";
             }
-
-            //BEHAVIORS
-            //Constructors
-            public Dragon()
+            else if (dracoWater > 50) //half way 
             {
-                //default constructor - never put anything in this constructor
-                //takes no parameters (nothing in the parentheses)
+                return"Draco seems thirsty. Fill the water dish and run!";
             }
-
-
-            public Dragon(int dracoHungry, int dracoHappy, int dracoAge, int energyLevel, int dracoWater)
+            else if (dracoWater > 90)
             {
-                this.dracoHungry = dracoHungry;
-                this.dracoHappy = dracoHappy;
-                this.dracoAge = dracoAge;
-                this.energyLevel = energyLevel;
-                this.dracoWater = dracoWater;
-
+                return"Draco is dying of dehydration. Give her water!";
             }
-
-
-            //methods(at least three)
-            public virtual void Play() // if she plays she will get hungry, get thirsty and lose energy.
+            else
             {
-                dracoHappy += 0;
-                dracoHungry -= 6;
-                energyLevel -= 10;
-                dracoWater -= 5;
-
-            }//this is the end of DracoPlay method
-
-            public virtual void Feed() //if she feeds she will get thirsty and gain energy
-            {
-                if (dracoHungry > 10) //basically saying if dracoHungry is less than 1 do this:
-                {
-                    Console.WriteLine("Did you just feed her a whale?  She's full. She can't eat anymore.");
-
-                }
-                else if (dracoHungry > 50) //less than or equal to 60
-                {
-                    Console.WriteLine("Draco seems to be quite hungry.  One or two Fwoopers will do.");
-                }
-                else if (dracoHungry > 90) //almost at the end
-                {
-                    Console.WriteLine("She is weak, she must be fed. Quick, someone get her an elephant!");
-                }
-                else
-                {
-                    Console.WriteLine("Hungarian Horntails are even more vicious when hungry? It's now or never. ");
-                }
-                dracoHungry += 6; //if she eats she will get thirsty, increase energy and make her happy
-                dracoWater -= 5;
-                energyLevel += 5;
-                dracoHappy += 3;
-            } //this is the end of the feed method
-
-            public virtual void Water() //this needs to  be in string 
-
-            {
-                if (dracoWater < 20) //basically saying if dracoWater is less than 9 do this:
-                {
-                    Console.WriteLine("She's had her fill of water at the moment. Best to not give her anymore water.");
-                }
-                else if (dracoWater > 50) //half way 
-                {
-                    Console.WriteLine("Draco seems thirsty. Fill the water dish and run!");
-                }
-                else if (dracoWater > 90)
-                {
-                    Console.WriteLine("Draco is dying of dehydration. Give her water!");
-                }
-                else
-                {
-                    Console.WriteLine("Hungarian Horntails are even more vicious when thirsty? It's now or never. ");
-                }
-                dracoWater += 3;//if draco drinks water she will 
-                dracoHungry -= 1;
-                energyLevel += 2;
-                dracoHappy -= 3;
-            } //this is the end of the Water method
-            public virtual void DracoEat()
-            {
-                dracoHungry += 2; //this - an incrememnt of 2 (which is less than 5 set)
-                dracoWater -= 1; //adds water when eats
-                energyLevel += 1;
-                dracoHappy -= 1;
-            }//this is the end of the DracoEat method
+                return "Hungarian Horntails are even more vicious when thirsty? It's now or never. ";
+            }
+           
+        } //this is the end of the Water method
+        public virtual void DracoEat()
+        {
+            dracoHungry += 2; //this - an incrememnt of 2 (which is less than 5 set)
+            dracoWater -= 1; //adds water when eats
+            energyLevel += 1;
+            dracoHappy -= 1;
+        }//this is the end of the DracoEat method
 
 
-        }//end of class Dragon
+
     }//end class Virtual Pet
 }//end of namespace

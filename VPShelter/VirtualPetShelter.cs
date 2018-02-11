@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-  public class VirtualPetShelter//think of this like the client class (not connected to anything)
+    public class VirtualPetShelter//think of this like the client class (not connected to anything)
     {
 
         //fields
@@ -14,10 +14,15 @@ namespace VPShelter
         //include appropriate  instance variables (fields properties) to store the pets who reside  at the shelter
         //include appropriate instance variables (fields/properties) to store all employees who volunteer or work at the shelter.
         //(LIST LIST LIST)
+        //hidden fields add lists in properties
+
         //properties
+        public PetList<VirtualPet> ShelterPetList { get; set; } //added this way bc field is invisible
+        public EmployeeList<Employee>ShelterEmployeeList { get; set; }//added this way bc field is invisible
+
 
         //constructors
-
+        // i dont think there shoud be any constructors since it's an abstract class???
 
         //methods
     }//end of Class VirtualPetshelter 
