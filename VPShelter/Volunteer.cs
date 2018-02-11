@@ -36,12 +36,12 @@ namespace VPShelter
         //methods (must contain override method)
         public override double Salary()
         {
-            return "You are not eligible for salary.";
+            return 0.0;
         }
 
         public override double ShowID()
         {
-            return "You are not eligible to see this option.";
+            return 1234;
         }
 
         //must contain a method for feeding the pets

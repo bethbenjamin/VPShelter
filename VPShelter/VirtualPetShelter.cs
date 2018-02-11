@@ -21,8 +21,8 @@ namespace VPShelter
 
          //im going to try and add lists for both petshelter and shelteremployee
         //properties
-        public PetList<VirtualPet>MagicalPetList { get; set; } //added this way bc field is invisible
-        public EmployeeList<Employee>MagicalEmployeeList { get; set; }//added this way bc field is invisible
+        public List<VirtualPet>MagicalPetList { get; set; } //added this way bc field is invisible
+        public List<Employee>MagicalEmployeeList { get; set; }//added this way bc field is invisible
 
 
         //constructors
