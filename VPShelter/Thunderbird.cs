@@ -61,7 +61,7 @@
 
         }//this is the end of thunderPlay method
 
-        public override void Feed() //if she feeds she will get thirsty and gain energy
+        public override Feed() //if she feeds she will get thirsty and gain energy
         {
             if (thunderHungry > 10) //basically saying if thunderHungry is less than 1 do this:
             {
@@ -80,13 +80,15 @@
             {
                 return "Thunderbirds are interesting creatures, keep her happy, there will be no problems. ";
             }
+
+            //these are faded and i dont know why...
             thunderHungry += 6; //if she eats she will get thirsty, increase energy and make her happy
             thunderWater -= 5;
             thunderEnergyLevel += 5;
             thunderHappy += 3;
         } //this is the end of the feed method
 
-        public override void Water() //this needs to  be in string 
+        public override  Water() //this needs to  be in string 
 
         {
             if (thunderWater < 20) //basically saying if thunderWater is less than 9 do this:

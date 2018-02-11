@@ -39,6 +39,11 @@ namespace VPShelter
             return "You are not eligible for salary.";
         }
 
+        public override double ShowID()
+        {
+            return "You are not eligible to see this option.";
+        }
+
         //must contain a method for feeding the pets
     }//end class
 }//end namespace
