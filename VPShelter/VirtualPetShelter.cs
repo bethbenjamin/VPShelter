@@ -22,12 +22,13 @@ namespace VPShelter
          //im going to try and add lists for both petshelter and shelteremployee
         //properties
         public List<VirtualPet>MagicalPetList { get; set; } //added this way bc field is invisible
-        public List<Employee>MagicalEmployeeList { get; set; }//added this way bc field is invisible
-
+        public List<Employee>MagicalEmployeeList { get; set; }//added this way bc field is invisible // also when i set the fields // i cant figure out how to call them in properties.
+                                                              //without getting errors.
 
         //constructors
         // i dont think there shoud be any constructors since it's an abstract class???
-
+        //ref: microsoft.com Rule Description
+        //Constructors on abstract types can be called only by derived types.Because public constructors create instances of a type, and you cannot create instances of an abstract type, an abstract type that has a public constructor is incorrectly designed.
         //methods
     }//end of Class VirtualPetshelter 
 }//end of Namespace

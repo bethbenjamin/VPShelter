@@ -1,4 +1,10 @@
-﻿namespace VPShelter
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VPShelter
 {
     public class Thunderbird : VirtualPet
     {
@@ -52,7 +58,7 @@
         }
 
         //methods
-        public override void Play() // if she plays she will get hungry, get thirsty and lose energy.
+        public override void  Play() // if she plays she will get hungry, get thirsty and lose energy.
         {
             thunderHappy += 0;
             thunderHungry -= 6;
@@ -61,24 +67,24 @@
 
         }//this is the end of thunderPlay method
 
-        public override Feed() //if she feeds she will get thirsty and gain energy
+        public override void Feed() //if she feeds she will get thirsty and gain energy
         {
             if (thunderHungry > 10) //basically saying if thunderHungry is less than 1 do this:
             {
-                return "Yum. She's full. She can't eat anymore.";
+                Console.WriteLine( "Yum. She's full. She can't eat anymore.");
                 
             }
             else if (thunderHungry > 50) //less than or equal to 60
             {
-                return "Your Thunderbird seems to be quite hungry.  One or two Pygmy Puffs will do.";
+                Console.WriteLine( "Your Thunderbird seems to be quite hungry.  One or two Pygmy Puffs will do.");
             }
             else if (thunderHungry > 90) //almost at the end
             {
-                return "Quick, someone get her an Erumpant!";
+                Console.WriteLine( "Quick, someone get her an Erumpant!");
             }
             else
             {
-                return "Thunderbirds are interesting creatures, keep her happy, there will be no problems. ";
+                Console.WriteLine( "Thunderbirds are interesting creatures, keep her happy, there will be no problems. ");
             }
 
             //these are faded and i dont know why...
@@ -88,24 +94,24 @@
             thunderHappy += 3;
         } //this is the end of the feed method
 
-        public override  Water() //this needs to  be in string 
+        public override void Water() //this needs to  be in string 
 
         {
             if (thunderWater < 20) //basically saying if thunderWater is less than 9 do this:
             {
-                return"Best to not give her anymore water.";
+                Console.WriteLine("Best to not give her anymore water.");
             }
             else if (thunderWater > 50) //half way 
             {
-               return "Your Thunderbird seems thirsty. Fill the water dish!";
+               Console.WriteLine( "Your Thunderbird seems thirsty. Fill the water dish!");
             }
             else if (thunderWater > 90)
             {
-               return"Give Thunderbird her water!";
+               Console.WriteLine("Give Thunderbird her water!");
             }
             else
             {
-                return "Thunderbirds thrive on water. It's now or never. ";
+                Console.WriteLine( "Thunderbirds thrive on water. It's now or never. ");
             }
             thunderWater += 3;//if thunder drinks water she will 
             thunderHungry -= 1;

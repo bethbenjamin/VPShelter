@@ -1,4 +1,10 @@
-﻿namespace VPShelter
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VPShelter
 {
     public class VirtualPet
     {
@@ -14,7 +20,7 @@
         public int energyLevel = 100; //potential for energy gain or loss with hunger
         public int dracoWater = 100; //dragon water level out of 100 / same idea as Hungry
         
-        public string name = "";
+        public string petName = "";
         public string description = "";
         public int messyCage = 0;
 
@@ -49,10 +55,10 @@
             get { return this.dracoWater; }
             set { this.dracoWater = value; }
         }
-        public string Name
+        public string PetName
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this.petName; }
+            set { this.petName = value; }
         }
         public string Description
         {
@@ -74,18 +80,27 @@
         }
 
 
-        public VirtualPet(int dracoHungry, int dracoHappy, int dracoAge, int energyLevel, int dracoWater, string name, string description, int messyCage)
+        public VirtualPet(int dracoHungry, int dracoHappy, int dracoAge, int energyLevel, int dracoWater, string petName, string description, int messyCage)
         {
             this.dracoHungry = dracoHungry;
             this.dracoHappy = dracoHappy;
             this.dracoAge = dracoAge;
             this.energyLevel = energyLevel;
             this.dracoWater = dracoWater;
-            this.name = name;
+            this.petName = petName;
             this.description = description;
             this.messyCage = messyCage;
 
+
         }
+        public VirtualPet(string petName, string description)
+        {
+            this.petName = petName;
+            this.description = description;
+
+        }
+            
+
 
 
         //methods(at least three)
@@ -95,6 +110,7 @@
             dracoHungry -= 6;
             energyLevel -= 10;
             dracoWater -= 5;
+            messyCage -= 5;
 
         }//this is the end of DracoPlay method
 
@@ -102,50 +118,51 @@
         {
             if (dracoHungry > 10) //basically saying if dracoHungry is less than 1 do this:
             {
-                Console.Writeline("Did you just feed her a whale?  She's full. She can't eat anymore.");
+                Console.WriteLine("Did you just feed her a whale?  She's full. She can't eat anymore.");
                 
             }
             else if (dracoHungry > 50) //less than or equal to 60
             {
-                Console.Writeline( "Draco seems to be quite hungry.  One or two Fwoopers will do.");
+                Console.WriteLine( "Draco seems to be quite hungry.  One or two Fwoopers will do.");
             }
             else if (dracoHungry > 90) //almost at the end
             {
-                Console.Writeline( "She is weak, she must be fed. Quick, someone get her an elephant!");
+                Console.WriteLine( "She is weak, she must be fed. Quick, someone get her an elephant!");
             }
             else
             {
-                Console.Writeline( "Hungarian Horntails are even more vicious when hungry? It's now or never. ");
+                Console.WriteLine( "Hungarian Horntails are even more vicious when hungry? It's now or never. ");
             }
             dracoHungry += 6; //if she eats she will get thirsty, increase energy and make her happy
             dracoWater -= 5;
             energyLevel += 5;
             dracoHappy += 3;
+            messyCage += 5;
         } //this is the end of the feed method
 
-        public virtual Water() //this needs to  be in string 
+        public virtual void Water() //this needs to  be in string 
 
         {
             dracoWater += 3;//if draco drinks water she will 
             dracoHungry -= 1;
             energyLevel += 2;
             dracoHappy -= 3;
-
+            messyCage += 5;
             if (dracoWater < 20) //basically saying if dracoWater is less than 9 do this:
             {
-                Console.Writeline( "She's had her fill of water at the moment. Best to not give her anymore water.");
+                Console.WriteLine( "She's had her fill of water at the moment. Best to not give her anymore water.");
             }
             else if (dracoWater > 50) //half way 
             {
-                Console.Writeline("Draco seems thirsty. Fill the water dish and run!");
+                Console.WriteLine("Draco seems thirsty. Fill the water dish and run!");
             }
             else if (dracoWater > 90)
             {
-                Console.Writeline("Draco is dying of dehydration. Give her water!");
+                Console.WriteLine("Draco is dying of dehydration. Give her water!");
             }
             else
             {
-                Console.Writeline( "Hungarian Horntails are even more vicious when thirsty? It's now or never. ");
+                Console.WriteLine( "Hungarian Horntails are even more vicious when thirsty? It's now or never. ");
             }
            
         } //this is the end of the Water method
@@ -155,6 +172,7 @@
             dracoWater -= 1; //adds water when eats
             energyLevel += 1;
             dracoHappy -= 1;
+            messyCage += 5;
         }//this is the end of the DracoEat method
 
 

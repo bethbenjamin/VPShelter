@@ -18,6 +18,7 @@ namespace VPShelter
         public double EmployeeID
         {
             get { return this.employeeID; }
+            set { this.EmployeeID = value; }
            
         }
        
