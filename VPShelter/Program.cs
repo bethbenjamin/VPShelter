@@ -23,15 +23,15 @@ namespace VPShelter
             VirtualPet petOne = new VirtualPet("Draco", "Large Dragon");
             VirtualPet petTwo = new VirtualPet("Thunderbird", "Eagle faced Hippogriff ");
             Thunderbird thunder = new Thunderbird("Frank", "Eagle faced Hippogriff");
-            //base class employee
-            //objects of employee are 1 manager and 2 volunteers
+            ////base class employee
+            ////objects of employee are 1 manager and 2 volunteers
 
             Manager managerOne = new Manager("Rubeus Hagrid");
 
             Volunteer volunteer = new Volunteer();
             Volunteer volunteerOne = new Volunteer("Newton Scamander","");
             Volunteer volunteerTwo = new Volunteer("Jacob Kowalski", "");
-            //required employeeID 
+            ////required employeeID 
             managerOne.EmployeeID = 8675309;
             volunteerOne.EmployeeID = 62442;
             volunteerTwo.EmployeeID = 394;
@@ -70,7 +70,7 @@ namespace VPShelter
                         Console.WriteLine("Adopt a Magical Creature, press 4 ");
                         Console.WriteLine("To play with Magical Creatures, press 5");
                         Console.WriteLine("Exit, press 6");
-                        
+
                         choice = int.Parse(Console.ReadLine());
 
                         string creatureAdoption = Console.ReadLine(); // adding a string for adoption for switch
@@ -79,19 +79,19 @@ namespace VPShelter
                             case 1://show ID
                                 Console.WriteLine(managerOne.ShowID());
                                 Console.WriteLine("(Name)   (ID)");
-                                Console.WriteLine("{ 0} { 1}",  managerOne.managerName, managerOne.showID  );
+                                Console.WriteLine("{ 0} { 1}", managerOne.managerName, managerOne.showID);
                                 break;
                             case 2://manager salary
                                 Console.WriteLine("Manager's salary");
-                                Console.WriteLine(managerOne.Salary()+""+"Galleons");
-                                
+                                Console.WriteLine(managerOne.Salary() + "" + "Galleons");
+
                                 Console.WriteLine();
                                 break;
                             case 3://view inventory
                                 Console.Clear();
                                 Console.WriteLine("Magical Creature Inventory");
                                 Console.WriteLine("Creature Name   Description");
-                                Console.WriteLine("{0}", petOne );
+                                Console.WriteLine("{0}", petOne);
                                 Console.WriteLine("{0}", petTwo);
                                 Console.WriteLine("{0}", thunder);
                                 break;
@@ -107,7 +107,7 @@ namespace VPShelter
                                 {
                                     Console.WriteLine("Thunderbird makes a fantastic pet");
                                 }
-                                else 
+                                else
                                 {
                                     Console.WriteLine("Frank is a Hip - Hippogriff. Respect is everytihng.");
                                 }
